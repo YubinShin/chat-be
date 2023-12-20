@@ -1,6 +1,7 @@
 package com.yubin.chat.message;
 
 import com.yubin.chat.user.User;
+import com.yubin.chat.chatroom.ChatRoom;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,9 +38,9 @@ public class Message {
     private Integer replyToMessageId;
 
     // 연관 관계 매핑 (옵션)
-//    @ManyToOne
-//    @JoinColumn(name = "chatRoomId", insertable = false, updatable = false)
-//    private ChatRoom chatRoom;
+    @ManyToOne
+    @JoinColumn(name = "chatRoomId", insertable = false, updatable = false)
+    private ChatRoom chatRoom;
 
     @ManyToOne
     @JoinColumn(name = "userId", insertable = false, updatable = false)
