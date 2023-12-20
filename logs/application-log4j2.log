@@ -1,0 +1,10 @@
+2023-12-20 21:14:14.160 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 8.0.1.Final
+2023-12-20 21:14:14.195 [ INFO] [  restartedMain] c.y.c.ChatApplication                    : Starting ChatApplication using Java 21.0.1 with PID 12760 (C:\Users\shiny\spring_webapp\chat\target\classes started by shiny in C:\Users\shiny\spring_webapp\chat)
+2023-12-20 21:14:14.198 [ INFO] [  restartedMain] c.y.c.ChatApplication                    : No active profile set, falling back to 1 default profile: "default"
+2023-12-20 21:14:15.106 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-20 21:14:15.124 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2023-12-20 21:14:15.882 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-12-20 21:14:15.883 [ INFO] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-12-20 21:14:15.884 [ INFO] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-20 21:14:15.915 [ INFO] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-12-20 21:14:16.081 [ INFO] [  restartedMain] o.a.c.c.StandardService                  : Stopping service [Tomcat]
