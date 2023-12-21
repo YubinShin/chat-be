@@ -1,5 +1,6 @@
 package com.yubin.chat.chatroom;
 
+import com.yubin.chat.chatroommember.ChatRoomMember;
 import com.yubin.chat.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "chatroom")
@@ -29,7 +32,10 @@ public class ChatRoom {
             columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime chatroomCreationDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "chatroom_created_by_user_id")
-    private User createdBy;
+    @ManyToOne
+    @JoinColumn(name = "chatroom_owner_user_id", nullable = false)
+    private User chatroomOwner; // 변경된 부분
+
+    @OneToMany(mappedBy = "chatRoom")
+    private List<ChatRoomMember> chatRoomMembers = new ArrayList<>();
 }

@@ -1,5 +1,6 @@
 package com.yubin.chat.user;
 
+import com.yubin.chat.chatroommember.ChatRoomMember;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
@@ -10,6 +11,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -54,6 +57,9 @@ public class User {
 
     @Column(name = "user_updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "user")
+    private List<ChatRoomMember> chatRoomMembers = new ArrayList<>();
 
     /** 유저 생성 시 createdAt, updatedAt 초기화 */
     @PrePersist
