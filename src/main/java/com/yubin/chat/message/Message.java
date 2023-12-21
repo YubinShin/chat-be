@@ -15,39 +15,30 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Message")
+@Table(name = "message")
 public class Message {
 
     @Id
+    @Column(name = "message_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer messageId;
 
-    @Column(nullable = false)
-    private Integer chatRoomId;
-
-    @Column(nullable = false)
-    private Integer userId;
-
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String messageContent;
-
-    @Column(nullable = false)
-    private LocalDateTime timestamp;
-
-    @Column
-    private Integer replyToMessageId;
-
-    // 연관 관계 매핑 (옵션)
     @ManyToOne
-    @JoinColumn(name = "chatRoomId", insertable = false, updatable = false)
+    @JoinColumn(name = "message_chatroom_id")
     private ChatRoom chatRoom;
 
     @ManyToOne
-    @JoinColumn(name = "userId", insertable = false, updatable = false)
+    @JoinColumn(name = "message_user_id")
     private User user;
 
+    @Column(name = "message_content", nullable = false, columnDefinition = "TEXT")
+    private String messageContent;
+
+    @Column(name = "message_timestamp", nullable = false)
+    private LocalDateTime timestamp;
+
     @ManyToOne
-    @JoinColumn(name = "replyToMessageId", insertable = false, updatable = false)
+    @JoinColumn(name = "message_reply_to_message_id")
     private Message replyToMessage;
 
 }

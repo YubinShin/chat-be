@@ -7,10 +7,10 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "ChatRoom")
+@Table(name = "chatroom")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,22 +18,18 @@ import java.util.Date;
 public class ChatRoom {
 
     @Id
+    @Column(name = "chatroom_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int chatRoomID;
+    private int chatroomId;
 
-    @Column(nullable = false, length = 100)
-    private String chatRoomName;
+    @Column(name = "chatroom_name", nullable = false, length = 100)
+    private String chatroomName;
 
-    @Column(nullable = false, insertable = false, updatable = false,
+    @Column(name = "chatroom_creation_date", nullable = false, insertable = false, updatable = false,
             columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date creationDate;
+    private LocalDateTime chatroomCreationDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(referencedColumnName = "userId")
+    @JoinColumn(name = "chatroom_created_by_user_id")
     private User createdBy;
-
-    public ChatRoom(String chatRoomName, User createdBy) {
-        this.chatRoomName = chatRoomName;
-        this.createdBy = createdBy;
-    }
 }
