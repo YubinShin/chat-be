@@ -1,45 +1,45 @@
 -- 사용자 테이블 생성
-CREATE TABLE User (
-    UserID INT AUTO_INCREMENT PRIMARY KEY,
-    Username VARCHAR(50) NOT NULL,
-    Email VARCHAR(100),
-    Password VARCHAR(100) NOT NULL,
-    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    UpdatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    RefreshToken TEXT,
-    ProfileImage TEXT,
-    OAuthProvider VARCHAR(50),
-    Role VARCHAR(50) NOT NULL
+CREATE TABLE user (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_name VARCHAR(50) NOT NULL,
+    user_email VARCHAR(100),
+    user_password VARCHAR(100) NOT NULL,
+    user_created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    user_updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    user_refresh_token TEXT,
+    user_profile_image TEXT,
+    user_oauth_provider VARCHAR(50),
+    role VARCHAR(50) NOT NULL
 );
 
 -- 채팅방 테이블 생성
-CREATE TABLE ChatRoom (
-    ChatRoomID INT AUTO_INCREMENT PRIMARY KEY,
-    ChatRoomName VARCHAR(100) NOT NULL,
-    CreationDate DATETIME DEFAULT CURRENT_TIMESTAMP,
-    CreatedByUserID INT,
-    FOREIGN KEY (CreatedByUserID) REFERENCES User(UserID)
+CREATE TABLE chatroom (
+    chatroom_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_by_user_id INT,
+    FOREIGN KEY (created_by_user_id) REFERENCES user(user_id)
 );
 
 -- 메시지 테이블 생성
-CREATE TABLE Message (
-    MessageID INT AUTO_INCREMENT PRIMARY KEY,
-    ChatRoomID INT,
-    UserID INT,
-    MessageContent TEXT NOT NULL,
-    Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-    ReplyToMessageID INT DEFAULT NULL,
-    FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom(ChatRoomID),
-    FOREIGN KEY (UserID) REFERENCES User(UserID),
-    FOREIGN KEY (ReplyToMessageID) REFERENCES Message(MessageID)
+CREATE TABLE message (
+    message_id INT AUTO_INCREMENT PRIMARY KEY,
+    message_chatroom_id INT,
+    message_user_id INT,
+    message_content TEXT NOT NULL,
+    message_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    message_reply_to_message_id INT DEFAULT NULL,
+    FOREIGN KEY (message_chatroom_id) REFERENCES chatroom(chatroom_id),
+    FOREIGN KEY (message_user_id) REFERENCES user(user_id),
+    FOREIGN KEY (message_reply_to_message_id) REFERENCES message(message_id)
 );
 
 -- 채팅방 멤버 테이블 생성
-CREATE TABLE ChatRoomMember (
-    ChatRoomID INT,
-    UserID INT,
-    JoinDate DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (ChatRoomID, UserID),
-    FOREIGN KEY (ChatRoomID) REFERENCES ChatRoom(ChatRoomID),
-    FOREIGN KEY (UserID) REFERENCES User(UserID)
+CREATE TABLE chatroom_member (
+    chatroom_member_chatroom_id INT,
+    chatroom_member_user_id INT,
+    chatroom_member_user_join_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (chatroom_member_chatroom_id, chatroom_member_user_id),
+    FOREIGN KEY (chatroom_member_chatroom_id) REFERENCES chatroom(chatroom_id),
+    FOREIGN KEY (chatroom_member_user_id) REFERENCES user(user_id)
 );
