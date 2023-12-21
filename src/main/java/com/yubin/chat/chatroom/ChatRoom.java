@@ -1,5 +1,6 @@
 package com.yubin.chat.chatroom;
 
+import com.yubin.chat.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,11 +28,12 @@ public class ChatRoom {
             columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date creationDate;
 
-    @Column
-    private int createdByUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(referencedColumnName = "userId")
+    private User createdBy;
 
-    public ChatRoom(String chatRoomName, int createdByUserID) {
+    public ChatRoom(String chatRoomName, User createdBy) {
         this.chatRoomName = chatRoomName;
-        this.createdByUserID = createdByUserID;
+        this.createdBy = createdBy;
     }
 }
