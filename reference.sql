@@ -8,14 +8,17 @@ CREATE TABLE User (
     UpdatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     RefreshToken TEXT,
     ProfileImage TEXT,
-    OAuthProvider VARCHAR(50)
+    OAuthProvider VARCHAR(50),
+    Role VARCHAR(50) NOT NULL
 );
 
 -- 채팅방 테이블 생성
 CREATE TABLE ChatRoom (
     ChatRoomID INT AUTO_INCREMENT PRIMARY KEY,
     ChatRoomName VARCHAR(100) NOT NULL,
-    CreationDate DATETIME DEFAULT CURRENT_TIMESTAMP
+    CreationDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CreatedByUserID INT,
+    FOREIGN KEY (CreatedByUserID) REFERENCES User(UserID)
 );
 
 -- 메시지 테이블 생성
