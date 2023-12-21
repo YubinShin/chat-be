@@ -19,3 +19,39 @@
 | 담당 분야 및 역할 | - 전체 서비스 아키텍처 설계  |
 | 프로젝트 결과 | - |
 | 연락처 | - 이메일 : shin.yubin18@gmail.com |
+
+## 기능 명세 및 개발일지
+
+### 12/18 ~ 12/20 
+
+- 기획
+
+### 12/21 
+
+- 프로젝트 초기화
+- 스키마 확정
+- DB 설정(Mysql, Redis)
+- Actuator 설정('/health', '/info')
+- 모니터링 설정(prometheus, grafana)
+- RequestLogging, FailureAnalyzer
+- 스프링 시큐리티 초기 설정 
+
+### 진행 예정
+
+- 스프링 시큐리티(JWT)
+- 유저 CRUD 비즈니스 로직
+- 채팅방 CRUD 비즈니스 로직
+- 메세지 CR 비즈니스 로직
+- OpenAPI 설정
+- API 버저닝
+- ExceptionHandler
+- 속도 제한(Rate Limiter)
+- 웹소켓(STOMP, SockJS)
+- Docker, K8S(GKE) 배포
+- REST API 단위 테스트 작성
+
+### 추가 기능
+
+- OAUTH
+- 리액티브, R소켓
+- 데이터베이스 최적화 및 인덱싱(Master, Slave 로 분리)
