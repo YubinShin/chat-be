@@ -1,7 +1,7 @@
 -- 사용자 테이블 생성
 CREATE TABLE user (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_name VARCHAR(50) NOT NULL,
+    user_username VARCHAR(50) NOT NULL,
     user_email VARCHAR(100),
     user_password VARCHAR(100) NOT NULL,
     user_created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -15,10 +15,10 @@ CREATE TABLE user (
 -- 채팅방 테이블 생성
 CREATE TABLE chatroom (
     chatroom_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    created_by_user_id INT,
-    FOREIGN KEY (created_by_user_id) REFERENCES user(user_id)
+    chatroom_name VARCHAR(100) NOT NULL,
+    chatroom_creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    chatroom_created_by_user_id INT,
+    FOREIGN KEY (chatroom_created_by_user_id) REFERENCES user(user_id)
 );
 
 -- 메시지 테이블 생성
