@@ -55,3 +55,21 @@
 - OAUTH
 - 리액티브, R소켓
 - 데이터베이스 최적화 및 인덱싱(Master, Slave 로 분리)
+
+### 참고 자료
+
+| 이슈명       | 링크                                                                                                                                                                                                                                                           |
+|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 실전 스프링 부트 | [https://product.kyobobook.co.kr/detail/S000208713876](https://product.kyobobook.co.kr/detail/S000208713876)                                                                                                                                                 |
+| 【한글자막】 Spring Boot 3 & Spring Framework 6 마스터 (2023 Java 최신)| [https://www.udemy.com/course/spring-boot-and-spring-framework-korean/](https://www.udemy.com/course/spring-boot-and-spring-framework-korean/)                                                                                                               |
+| 스프링부트 시큐리티 & JWT 강의| [https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard) |
+| 쿠버네티스 교과서 | [https://product.kyobobook.co.kr/detail/S000208711643](https://product.kyobobook.co.kr/detail/S000208711643)                                                                                                                                                 |
+| 【한글자막】 초보자를 위한 Kubernetes 완벽강의 : 구글 Cloud , AWS 및 Azure | [https://www.udemy.com/course/best-kubernetes-cloud-aws-azure/learn/lecture/29499700?start=0#content](https://www.udemy.com/course/best-kubernetes-cloud-aws-azure/learn/lecture/29499700?start=0#content)                                                   |
+| 【한글자막】 Apache Kafka 시리즈 – 초보자를 위한 아파치 카프카 강의 v3      | [https://www.udemy.com/course/apache-kafka-korean/](https://www.udemy.com/course/apache-kafka-korean/)                                                                                                                                                       |
+
+
+
+
+
+
+
