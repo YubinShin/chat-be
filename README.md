@@ -41,7 +41,7 @@
 ![chat-cluster](https://github.com/YubinShin/chat-be/assets/68121478/ac4f97bf-2308-42fd-b164-6ed5fc49208c)
 
 - 클러스터 설계안 작성
-- Ingress Controller와 Stateful Connction 인 웹소켓이 잘 작동하게끔 설정 방법 찾아보는 것이 필요
+- Ingress Controller와 Stateful Connection 인 웹소켓이 잘 작동하게끔 설정 방법 찾아보는 것이 필요
 
 ### 1/3
 
