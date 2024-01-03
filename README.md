@@ -43,6 +43,11 @@
 - 클러스터 설계안 작성
 - Ingress Controller와 Stateful Connction 인 웹소켓이 잘 작동하게끔 설정 방법 찾아보는 것이 필요
 
+### 1/3
+
+스프링 시큐리티 부숴먹기
+[https://www.figma.com/community/file/1324286845363151728](https://www.figma.com/community/file/1324286845363151728)
+
 ### 진행 예정
 
 - 스프링 시큐리티(JWT)
