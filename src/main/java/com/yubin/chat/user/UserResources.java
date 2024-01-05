@@ -3,6 +3,8 @@ package com.yubin.chat.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class UserResources {
 
@@ -10,13 +12,13 @@ public class UserResources {
     private UserDaoService service;
 
     @GetMapping(path="/users")
-    public String retrieveAllUser() {
-        return service.findAllUser().toString();
+    public List<ApplicationUser> retrieveAllUser() {
+        return service.findAllUser();
     }
 
     @GetMapping(path="/users?username={username}")
-    public String retrieveUser(@RequestParam String username) {
-        return service.findByUsername(username).toString();
+    public ApplicationUser retrieveUser(@RequestParam String username) {
+        return service.findByUsername(username);
     }
 
     @PostMapping(path="/users/register")
