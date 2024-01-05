@@ -1,7 +1,7 @@
 package com.yubin.chat.chatroommember;
 
 import com.yubin.chat.chatroom.ChatRoom;
-import com.yubin.chat.user.User;
+import com.yubin.chat.user.ApplicationUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,7 +29,7 @@ public class ChatRoomMember {
     @MapsId("userId")
     @ManyToOne
     @JoinColumn(name = "chatroom_member_user_id")
-    private User user;
+    private ApplicationUser user;
 
     @Column(name = "chatroom_member_user_join_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime joinDate;

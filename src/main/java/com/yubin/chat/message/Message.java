@@ -1,6 +1,6 @@
 package com.yubin.chat.message;
 
-import com.yubin.chat.user.User;
+import com.yubin.chat.user.ApplicationUser;
 import com.yubin.chat.chatroom.ChatRoom;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,7 +29,7 @@ public class Message {
 
     @ManyToOne
     @JoinColumn(name = "message_user_id")
-    private User user;
+    private ApplicationUser user;
 
     @Column(name = "message_content", nullable = false, columnDefinition = "TEXT")
     private String messageContent;

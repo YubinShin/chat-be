@@ -1,7 +1,7 @@
 package com.yubin.chat.chatroom;
 
 import com.yubin.chat.chatroommember.ChatRoomMember;
-import com.yubin.chat.user.User;
+import com.yubin.chat.user.ApplicationUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,7 +34,7 @@ public class ChatRoom {
 
     @ManyToOne
     @JoinColumn(name = "chatroom_owner_user_id", nullable = false)
-    private User chatroomOwner; // 변경된 부분
+    private ApplicationUser chatroomOwner; // 변경된 부분
 
     @OneToMany(mappedBy = "chatRoom")
     private List<ChatRoomMember> chatRoomMembers = new ArrayList<>();
