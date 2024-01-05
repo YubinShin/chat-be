@@ -1,6 +1,6 @@
 package com.yubin.chat.config;
 
-import com.yubin.chat.user.CustomUserDetailsServiceUserDetailsService;
+import com.yubin.chat.user.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
