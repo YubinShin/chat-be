@@ -22,4 +22,6 @@ public class UserDto {
     @NotEmpty()
     private String confirmPassword;
 
+    @NotEmpty()
+    private String profileImage;
 }

@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CustonUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private ApplicationUserRepository applicationUserRepository;
+    private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
-        ApplicationUser applicationUser = applicationUserRepository.findByUsername(username)
+        ApplicationUser applicationUser = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("해당 회원이 존재하지 않습니다."));
 
         return User.builder()
