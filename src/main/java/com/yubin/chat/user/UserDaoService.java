@@ -5,8 +5,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class DefaultUserService implements UserService{
+public class UserDaoService implements UserService{
 
     @Autowired
     private UserRepository userRepository;
@@ -31,5 +33,9 @@ public class DefaultUserService implements UserService{
         return userRepository
                 .findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("해당 회원이 존재하지 않습니다."));
+    }
+
+    public List<ApplicationUser> findAllUser() {
+        return userRepository.findAll();
     }
 }
