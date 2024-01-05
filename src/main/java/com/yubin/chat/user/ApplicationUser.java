@@ -20,7 +20,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user")
+@Table(name = "user", indexes = @Index(name = "idx_user_username", columnList = "user_username"))
 public class ApplicationUser{
     @Id
     @Column(name = "user_id")
@@ -43,9 +43,9 @@ public class ApplicationUser{
     @Column(name = "user_refresh_token")
     private String refreshToken;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "role")
-    private Role role = Role.USER;
+//    @Enumerated(EnumType.STRING)
+//    @Column(name = "role")
+//    private Role role = Role.USER;
 
     @Column(name = "user_profile_image")
     private String profileImage;
