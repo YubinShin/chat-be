@@ -1,6 +1,6 @@
 package com.yubin.chat.config;
 
-import com.yubin.chat.user.CustonUserDetailsService;
+import com.yubin.chat.user.CustomUserDetailsServiceUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,7 +43,7 @@ public class SecurityConfiguration{
 
     @Bean
     public UserDetailsService userDetailsService(){
-        return new CustonUserDetailsService();
+        return new CustomUserDetailsService();
     }
 
     @Bean
